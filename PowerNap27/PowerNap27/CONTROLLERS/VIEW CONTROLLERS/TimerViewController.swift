@@ -59,6 +59,7 @@ extension TimerViewController : MyTimerDelegate {
         updateLabel()
         updateButton()
         // Call the display alert controller function
+        displaySnoozeAlertController()
         
     }
     
@@ -69,6 +70,29 @@ extension TimerViewController : MyTimerDelegate {
 
 extension TimerViewController {
     func displaySnoozeAlertController() {
+      let alertController = UIAlertController(title: "Time to wake up!", message: "Get up lazy!", preferredStyle: .alert)
         
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Snooze for how manuy minutes?"
+            textField.keyboardType = .numberPad
+        }
+        
+        let snoozeAction = UIAlertAction(title: "Snooze", style: .default) {
+            (_) in
+            guard let timeText = alertController.textFields?.first?.text,
+                let time = TimeInterval(timeText) else { return }
+            
+            self.timer.startTimer(time * 60)
+            self.updateLabel()
+            self.updateButton()
+        }
+        
+        alertController.addAction(snoozeAction)
+        
+        let dismissAction = UIAlertAction(title: "Dismiss", style: .cancel, handler: nil)
+        
+        alertController.addAction(dismissAction)
+        
+        present(alertController, animated: true, completion: nil)
     }
 }
