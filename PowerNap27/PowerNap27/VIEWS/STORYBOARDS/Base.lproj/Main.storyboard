@@ -1,11 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vbt-oj-BA7">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Timer View Controller-->
+        <scene sceneID="P9s-4l-3Jb">
+            <objects>
+                <viewController id="Vbt-oj-BA7" customClass="TimerViewController" customModule="PowerNap27" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QD2-ET-wOP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Xq7-0h-Lsi">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w9d-f5-tSh">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="668"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4O-YH-Mm5">
+                                                <rect key="frame" x="138.5" y="301" width="137" height="66.5"/>
+                                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="60"/>
+                                                <color key="textColor" red="0.094605518590000007" green="0.81193329020000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="0.3736549139" blue="0.047485314610000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstItem="t4O-YH-Mm5" firstAttribute="centerY" secondItem="w9d-f5-tSh" secondAttribute="centerY" id="cRg-Vv-P9i"/>
+                                            <constraint firstItem="t4O-YH-Mm5" firstAttribute="centerX" secondItem="w9d-f5-tSh" secondAttribute="centerX" id="fga-BU-i47"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="poe-F6-9BZ">
+                                        <rect key="frame" x="0.0" y="668" width="414" height="150"/>
+                                        <color key="backgroundColor" red="0.2233609308" green="0.43829314720000001" blue="0.0084287143689999993" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="vR5-z0-lT5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="TimesNewRomanPS-ItalicMT" family="Times New Roman" pointSize="30"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" red="1" green="0.50298597089999997" blue="0.0028394792260000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="napButtonTapped:" destination="Vbt-oj-BA7" eventType="touchUpInside" id="uy7-Mt-Mb0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iwL-EP-jQU" firstAttribute="bottom" secondItem="Xq7-0h-Lsi" secondAttribute="bottom" id="Gnq-qu-uEt"/>
+                            <constraint firstItem="iwL-EP-jQU" firstAttribute="trailing" secondItem="Xq7-0h-Lsi" secondAttribute="trailing" id="JCj-by-5ZZ"/>
+                            <constraint firstItem="Xq7-0h-Lsi" firstAttribute="leading" secondItem="iwL-EP-jQU" secondAttribute="leading" id="SnE-SL-vzW"/>
+                            <constraint firstItem="Xq7-0h-Lsi" firstAttribute="top" secondItem="iwL-EP-jQU" secondAttribute="top" id="prn-cM-ryx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iwL-EP-jQU"/>
+                    </view>
+                    <connections>
+                        <outlet property="napButton" destination="poe-F6-9BZ" id="t4B-xd-E7e"/>
+                        <outlet property="timerLabel" destination="t4O-YH-Mm5" id="7Z9-h9-fau"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vam-qU-LM2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="170" y="38"/>
+        </scene>
+    </scenes>
 </document>

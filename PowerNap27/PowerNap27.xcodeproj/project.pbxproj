@@ -11,6 +11,7 @@
 		0C48D77822B947DC0036C7DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C48D77622B947DC0036C7DD /* Main.storyboard */; };
 		0C48D77A22B947DC0036C7DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C48D77922B947DC0036C7DD /* Assets.xcassets */; };
 		0C48D77D22B947DC0036C7DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C48D77B22B947DC0036C7DD /* LaunchScreen.storyboard */; };
+		0CA6F3F622B94CF400F02D6B /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA6F3F522B94CF400F02D6B /* TimerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		0C48D77922B947DC0036C7DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C48D77C22B947DC0036C7DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C48D77E22B947DC0036C7DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0CA6F3F522B94CF400F02D6B /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		0C48D78822B948440036C7DD /* VIEW CONTROLLERS */ = {
 			isa = PBXGroup;
 			children = (
+				0CA6F3F522B94CF400F02D6B /* TimerViewController.swift */,
 			);
 			path = "VIEW CONTROLLERS";
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CA6F3F622B94CF400F02D6B /* TimerViewController.swift in Sources */,
 				0C48D77322B947DC0036C7DD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,7 +340,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5Z9AZ3J86W;
-				INFOPLIST_FILE = PowerNap27/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PowerNap27/RESOURCES/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -354,7 +358,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5Z9AZ3J86W;
-				INFOPLIST_FILE = PowerNap27/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PowerNap27/RESOURCES/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
