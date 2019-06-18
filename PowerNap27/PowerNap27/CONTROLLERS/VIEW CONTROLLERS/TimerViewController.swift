@@ -9,20 +9,18 @@
 import UIKit
 
 class TimerViewController: UIViewController {
-
+    
     
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var napButton: UIButton!
     
-    let timer = Timer()
+    let timer = MyTimer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
+        // Dont forget!!
+        timer.delegate = self
     }
-    
-    
     
     @IBAction func napButtonTapped(_ sender: Any) {
     }
@@ -46,5 +44,19 @@ class TimerViewController: UIViewController {
     func setTimer() {
         
     }
+    
+}
 
+extension TimerViewController : MyTimerDelegate {
+    func timerStopped() {
+        <#code#>
+    }
+    
+    func timerStarted() {
+        <#code#>
+    }
+    
+    func timerSecondTicked() {
+        <#code#>
+    }
 }
