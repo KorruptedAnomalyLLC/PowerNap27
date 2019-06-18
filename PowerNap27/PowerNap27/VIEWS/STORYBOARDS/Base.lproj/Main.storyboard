@@ -44,7 +44,7 @@
                                             <constraint firstAttribute="height" constant="150" id="vR5-z0-lT5"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="TimesNewRomanPS-ItalicMT" family="Times New Roman" pointSize="30"/>
-                                        <state key="normal" title="Button">
+                                        <state key="normal" title="Start Nap">
                                             <color key="titleColor" red="1" green="0.50298597089999997" blue="0.0028394792260000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>

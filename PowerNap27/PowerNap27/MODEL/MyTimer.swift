@@ -10,7 +10,7 @@ import Foundation
 
 protocol MyTimerDelegate: class {
     func timerStopped()
-    func timerStarted()
+    func timerCompleted()
     func timerSecondTicked()
 }
 
@@ -25,22 +25,29 @@ class MyTimer: NSObject {
     
     weak var delegate: MyTimerDelegate?
     
-    var isOn: Bool = false
+    var isOn: Bool {
+        if timeRemaining != nil {
+            return true
+        } else {
+            return false
+        }
+    }
     
     private func secondTicked() {
         guard let timeRemaining = timeRemaining else { return }
         if timeRemaining > 0 {
             self.timeRemaining = timeRemaining - 1
+            delegate?.timerSecondTicked()
             print(timeRemaining)
         } else {
             timer?.invalidate()
             self.timeRemaining = nil
+            delegate?.timerCompleted()
         }
     }
     
     func startTimer(_ time: TimeInterval) {
         if isOn == false {
-            isOn = true
             self.timeRemaining = time
             
             self.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { (_) in
@@ -52,7 +59,8 @@ class MyTimer: NSObject {
     func stopTimer() {
         if isOn {
             self.timeRemaining = nil
-            isOn = false
+            timer?.invalidate()
+            delegate?.timerStopped()
         }
     }
 }

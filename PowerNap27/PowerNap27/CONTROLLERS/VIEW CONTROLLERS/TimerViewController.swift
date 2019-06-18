@@ -23,40 +23,52 @@ class TimerViewController: UIViewController {
     }
     
     @IBAction func napButtonTapped(_ sender: Any) {
+        if timer.isOn {
+            timer.stopTimer()
+        } else {
+            timer.startTimer(5)
+        }
+        updateLabel()
+        updateButton()
     }
     
     func updateLabel() {
-        
+        if timer.isOn {
+            timerLabel.text = "\(timer.timeRemaining)"
+        } else {
+            timerLabel.text = "20:00"
+        }
     }
     
     func updateButton() {
-        
+        if timer.isOn {
+            napButton.setTitle("Cancel Nap", for: .normal)
+        } else {
+            napButton.setTitle("Start Nap", for: .normal)
+        }
     }
-    
-    func startTimer() {
-        
-    }
-    
-    func stopTImer() {
-        
-    }
-    
-    func setTimer() {
-        
-    }
-    
 }
 
 extension TimerViewController : MyTimerDelegate {
     func timerStopped() {
-        <#code#>
+        updateButton()
+        updateLabel()
     }
     
-    func timerStarted() {
-        <#code#>
+    func timerCompleted() {
+        updateLabel()
+        updateButton()
+        // Call the display alert controller function
+        
     }
     
     func timerSecondTicked() {
-        <#code#>
+        updateLabel()
+    }
+}
+
+extension TimerViewController {
+    func displaySnoozeAlertController() {
+        
     }
 }
